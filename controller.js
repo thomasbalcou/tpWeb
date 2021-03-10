@@ -49,11 +49,13 @@ function Pencil(ctx, drawing, canvas) {
 		if(document.querySelector('#butRect').checked){
 			var rec = new Rectangle(DnD.posXfinal - DnD.posXinit , DnD.posYfinal - DnD.posYinit , DnD.posXinit, DnD.posYinit, currColour, currLineWidth);
 			drawing.addForme(rec);
+			drawing.updateShapeList(rec);
 			rec.paint(ctx);
 		}
 		else{
 			var line = new Line(DnD.posXinit, DnD.posYinit , DnD.posXfinal, DnD.posYfinal, currColour, currLineWidth);
 			drawing.addForme(line);
+			drawing.updateShapeList(line);
 			line.paint(ctx);
 		}
 	}.bind(this);

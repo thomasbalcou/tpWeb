@@ -23,7 +23,6 @@ function Rectangle(largeur,hauteur,pointXinit,pointYinit,couleur,epaisseur){
     this.pointXinit = pointXinit;
     this.pointYinit = pointYinit;
 };
-Rectangle.prototype = new Forme();
 
 function Line(pointXinit,pointYinit,pointXfinal,pointYfinal,couleur,epaisseur ){
     Forme.call(this, couleur, epaisseur);
@@ -32,4 +31,5 @@ function Line(pointXinit,pointYinit,pointXfinal,pointYfinal,couleur,epaisseur ){
     this.pointXfinal = pointXfinal;
     this.pointYfinal = pointYfinal;
 };
+Rectangle.prototype = new Forme();
 Line.prototype = new Forme();

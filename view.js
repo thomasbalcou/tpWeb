@@ -28,4 +28,18 @@ Rectangle.prototype.paint = function(ctx) {
       eltDuTableau.paint(ctx);
     });
   };
+
+  var listeforme = '';
+  Drawing.prototype.updateShapeList = function(forme){
+    var shapeList = document.getElementById('shapeList');
+    var boutonsupprimer = '<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove-sign"></span></button>';
+    if (forme instanceof Rectangle){
+        listeforme += boutonsupprimer + parseInt(forme.pointXinit) + ';' + parseInt(forme.pointYinit) + ';' + parseInt(forme.largeur) + ';' + parseInt(forme.hauteur) + '<br>';
+    }
+    if (forme instanceof Line){
+        listeforme += boutonsupprimer + parseInt(forme.pointXinit) + ';' + parseInt(forme.pointYinit) + ';' + parseInt(forme.pointXfinal) + ';' + parseInt(forme.pointYfinal) + '<br>';
+    }
+    shapeList.innerHTML = listeforme;
+};
+
   
